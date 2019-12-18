@@ -1,0 +1,49 @@
+* {
+    text-align: center;
+    background-color: aliceblue;
+  }
+
+  li {
+    border: 5px solid black;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  li > button {
+    border: 5px solid aliceblue;
+    background-color: black;
+  }
+  
+  
+  .display-form, form > button {
+    color: white;
+    background: black;
+  }
+  
+  .display-form {
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+    width: 60%;
+  }
+  
+  .delete {
+    align-self: flex-end;
+    color: white;
+    padding-top: 10px
+  }
+  
+  .bookmark-form {
+    font-size: 15pt;
+    width: 60%;
+    margin: 0 auto; 
+  }
+
+  input {
+    text-align: center;
+    width: 100%;
+    border: 1px solid grey;
+    padding: 5px;
+    margin-bottom: 5px;
+  }

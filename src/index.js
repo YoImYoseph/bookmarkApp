@@ -1,10 +1,20 @@
-import $ from 'jquery';
+'use strict';
 
-function main() {
-  console.log('DOM is loaded');
+$('document').ready(function(){
+  api.getBookmarks()
+    .then(res => res.json())
+    .then(bookmarks => 
+      bookmarks.forEach(bookmark => {
+        store.addBookmark(bookmark);
+        bookmarkList.render();
+      }))
+    .catch(error => console.log(error));
+  if(store.adding) {
+    bookmarkForm.render();
+  }
+  bookmarkList.bindBookmarkListEventHandlers();
+  bookmarkForm.bindFormEventListeners();
+  console.log('index.js is loaded');
+});
 
-  const startMsg = $('<p>Webpack is working!</p>');
-  $('#root').append(startMsg);
-}
-
-$(main);
+console.log('store', store.bookmarks);
